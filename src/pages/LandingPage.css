@@ -1,0 +1,33 @@
+.table-container {
+  max-height: 420px;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  margin: 10px 20px;
+  border-radius: 10px;
+  color: white;
+  scrollbar-color: rgba(10, 10, 10) rgba(0, 0, 0, 0.5);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #505050;
+}
+
+th {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+td img{
+  width: 45px;
+  height: 35px;
+  border-radius: 1px;
+}
