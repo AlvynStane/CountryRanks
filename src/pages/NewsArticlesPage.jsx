@@ -1,34 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchNews } from '../redux/slices/newsSlice';
 import Card from '../components/Card';
 import './NewsArticlesPage.css';
 
-
 const NewsArticlesPage = () => {
-  const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const API_KEY = import.meta.env.VITE_API_KEY;
+  const dispatch = useDispatch();
+  const { articles, status, error } = useSelector((state) => state.news);
 
   useEffect(() => {
-    const fetchArticles = async () => {
-      try {
-        const response = await axios.get(
-          `https://api.nytimes.com/svc/topstories/v2/world.json?api-key=${API_KEY}`
-        );
-        setArticles(response.data.results);
-      } catch (err) {
-        setError(err);
-      } finally {
-        setLoading(false);
-      }
-    };
+    if (status === 'idle') {
+      dispatch(fetchNews());
+    }
+  }, [status, dispatch]);
 
-    fetchArticles();
-  }, []);
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error fetching articles: {error.message}</div>;
+  if (status === 'loading') return <div>Loading...</div>;
+  if (status === 'failed') return <div>Error fetching articles: {error}</div>;
 
   return (
     <div className="news-articles-page">

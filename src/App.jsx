@@ -1,25 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCountries } from './redux/slices/countriesSlice';
 import bgVideo from './assets/bg_video_2.mp4';
 import './App.css';
 import AppRoutes from './components/AppRoutes';
 
 const App = () => {
-  const [countries, setCountries] = useState([]);
+  const dispatch = useDispatch();
+  const { countries, status, error } = useSelector((state) => state.countries);
 
   useEffect(() => {
-    const fetchCountries = async () => {
-      try {
-        const response = await axios.get('https://restcountries.com/v3.1/all');
-        setCountries(response.data);
-      } catch (error) {
-        console.error("Error fetching countries:", error);
-      }
-    };
-
-    fetchCountries();
-  }, []);
+    if (status === 'idle') {
+      dispatch(fetchCountries());
+    }
+  }, [status, dispatch]);
 
   return (
     <div className='app'>
@@ -33,7 +28,13 @@ const App = () => {
         </nav>
       </header>
       <div className="content">
-        <AppRoutes countries={countries} /> 
+        {status === 'loading' ? (
+          <p>Loading...</p>
+        ) : error ? (
+          <p>Error: {error}</p>
+        ) : (
+          <AppRoutes countries={countries} />
+        )}
       </div>
     </div>
   );
