@@ -1,13 +1,37 @@
+.error-message {
+  margin-top: 130px;
+  color: red;
+  text-align: center;
+}
+
+.loader {
+  margin-top: 130px;
+  text-align: center;
+}
+
 .news-articles-page {
-    text-align: center;
-    padding: 20px;
-    overflow-y: auto;
-    margin-bottom: 100px;
-    scrollbar-color: rgba(10, 10, 10) rgba(0, 0, 0, 0.5);
-  }
-  
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+  margin-top: 110px;
+  text-align: center;
+  padding: 20px;
+  overflow-y: auto;
+  scrollbar-color: rgba(10, 10, 10) rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+.news-articles-page h1 {
+  font-size: 32px;
+  color: transparent;
+  text-align: center;
+  -webkit-text-stroke: 1px var(--primary-color);
+  margin-bottom: 20px;
+  text-shadow:1px 1px 25px var(--text-color), 1px 1px 25px var(--border-color);
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+	margin-bottom: 5px;
+}

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCountries } from './redux/slices/countriesSlice';
 import bgVideo from './assets/bg_video_2.mp4';
@@ -22,16 +22,21 @@ const App = () => {
       <header className="header">
         <h1>Country Rank Population</h1>
         <nav className='header-link'>
-          <Link to="/">HOME</Link>
-          <Link to="/compare">COMPARE</Link>
-          <Link to="/news">NEWS</Link>
+          <NavLink to="/">HOME</NavLink>
+          <NavLink to="/compare">COMPARE</NavLink>
+          <NavLink to="/news">NEWS</NavLink>
         </nav>
       </header>
       <div className="content">
         {status === 'loading' ? (
-          <p>Loading...</p>
+          <div className='loader'>
+            <p>Loading...</p>
+          </div>
         ) : error ? (
-          <p>Error: {error}</p>
+          <div className="error-message">
+            <p>Error: {error}</p>
+            <button onClick={() => dispatch(fetchCountries())}>Retry</button>
+          </div>
         ) : (
           <AppRoutes countries={countries} />
         )}

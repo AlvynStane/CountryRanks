@@ -9,7 +9,7 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/compare" element={<ComparePage />} />
-      <Route path="/compare/:firstCca2/n/:secondCca2" element={<ComparePage />} />
+      <Route path="/compare/:firstCode/n/:secondCode" element={<ComparePage />} />
       <Route path="/news" element={<NewsArticlesPage />} />
     </Routes>
   );

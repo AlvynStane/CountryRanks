@@ -14,8 +14,15 @@ const NewsArticlesPage = () => {
     }
   }, [status, dispatch]);
 
-  if (status === 'loading') return <div>Loading...</div>;
-  if (status === 'failed') return <div>Error fetching articles: {error}</div>;
+  if (status === 'loading') return <div className="loader">Loading...</div>;
+  if (status === 'failed') {
+    return (
+      <div className='error-message'>
+        <p>Error fetching articles: {error}</p>
+        <button onClick={() => dispatch(fetchNews())}>Retry</button>
+      </div>
+    );
+  }
 
   return (
     <div className="news-articles-page">

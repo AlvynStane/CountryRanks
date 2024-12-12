@@ -1,19 +1,62 @@
 .compare-page {
+    margin-top: 110px;
+    margin-bottom: 20px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
+    gap: 20px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.compare-title {
+    font-size: 32px;
+    color: transparent;
+    text-align: center;
+    -webkit-text-stroke: 1px var(--primary-color);
+    margin-bottom: 20px;
+    text-shadow:1px 1px 25px var(--text-color), 1px 1px 25px var(--border-color);
+}
+
 .compare-form {
     display: flex;
     align-items: center;
+    gap: 10px;
+}
+
+.compare-form button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.compare-form button:hover {
+    background-color: var(--hover-color);
 }
 
 .input-container {
     position: relative;
     flex: 1;
     margin-right: 30px;
+}
+
+.input-container input {
+    width: 200px;
+    height: 30px;
+    padding: 5px 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.input-container input:focus {
+    border-color: var(--primary-color);
+    outline: none;
 }
 
 .dropdown {
@@ -23,25 +66,98 @@
     right: 0;
     background-color: white;
     color: black;
-    border: 1px solid #ccc;
-    z-index: 1000;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    /* scrollbar-color: rgba(255, 245, 255, 0.9) rgba(255, 255, 255, 0.5); */
     max-height: 200px;
     overflow-y: auto;
+    z-index: 10;
+}
+
+.dropdown li {
+    border-bottom: 1px solid #999;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.dropdown li:hover {
+    background-color: #f0f0f0;
+    border-radius: 8px;
 }
 
 .comparison-details {
-    margin-top: 20px;
     align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    text-align: center;
 }
 
-.country-details{
+.comparison-cards {
     display: flex;
-    flex-direction: row;
-    margin-top: 15px;
-    padding-left: 20px;
-    gap: 30px;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 20px;
+}
+
+.country-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 20px);
+    margin: 10px;
+}
+
+.flag-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+
+.flag-image img {
+    width: 450px;
+    height: 240px;
+    object-fit: cover;
+}
+
+.country-details {
+    flex: 2;
+    text-align: left;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.country-details h4 {
+    color: var(--border-color);
+}
+
+.country-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.country-name {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.detail-row span:first-child {
+    font-weight: 600;
+    width: 150px;
+}
+
+.detail-row span:nth-child(2) {
+    width: 10px;
+}
+
+.cca2 {
+    font-size: 0.8em;
+    color: #666;
 }
