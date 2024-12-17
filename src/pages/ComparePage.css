@@ -8,6 +8,7 @@
     gap: 20px;
     overflow-y: auto;
     height: 100%;
+    scrollbar-color: rgba(10, 10, 10) rgba(0, 0, 0, 0.5);
 }
 
 .compare-title {
@@ -22,7 +23,8 @@
 .compare-form {
     display: flex;
     align-items: center;
-    gap: 10px;
+    padding-left: 130px;
+    gap: 15px;
 }
 
 .compare-form button {
@@ -68,7 +70,6 @@
     color: black;
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    /* scrollbar-color: rgba(255, 245, 255, 0.9) rgba(255, 255, 255, 0.5); */
     max-height: 200px;
     overflow-y: auto;
     z-index: 10;
@@ -160,4 +161,71 @@
 .cca2 {
     font-size: 0.8em;
     color: #666;
+}
+
+@media (max-width: 768px) {
+    .compare-page {
+        margin-top: 80px;
+        padding: 15px;
+        gap: 15px;
+    }
+    .compare-title {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    .compare-form {
+        padding-left: 80px;
+        gap: 10px;
+    }
+    .comparison-cards {
+        gap: 15px;
+    }
+    .flag-image img {
+        width: 340px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .compare-page {
+        margin-top: 100px;
+        padding: 10px;
+        gap: 10px;
+    }
+    .compare-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .compare-form {
+        padding-left: 0;
+        gap: 5px;
+        flex-direction: column;
+    }
+    .compare-form button {
+        padding: 5px 10px;
+    }
+    .input-container {
+        margin-right: 0;
+    }
+    .input-container input {
+        width: 100%;
+    }
+    .comparison-cards {
+        gap: 10px;
+        flex-direction: column;
+    }
+    .country-card {
+        width: 100%;
+        margin: 5px;
+    }
+    .country-details {
+        padding: 10px;
+        gap: 5px;
+    }
+    .country-name {
+        font-size: 1em;
+    }
+    .detail-row span:first-child {
+        width: 120px;
+    }
 }

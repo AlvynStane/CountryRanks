@@ -1,14 +1,15 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 :root {
   --primary-color: #FFC107;
   --hover-color: #FFB300;
-  --background-color: rgba(2, 2, 2, 0.7);
+  --background-color: rgba(0, 0, 0, 0.8);
   --text-color: white;
-  --border-color: #ccc;
-  --gradient-color: linear-gradient(0deg, #fee7a0, #FFB300)
+  --border-color: #505050;
+  --gradient-color: linear-gradient(0deg, #FEE7A0, #FFB300)
 }

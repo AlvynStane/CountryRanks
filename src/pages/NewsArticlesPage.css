@@ -35,3 +35,31 @@
   padding: 20px;
 	margin-bottom: 5px;
 }
+
+@media (max-width: 768px) {
+  .news-articles-page {
+    margin-top: 80px;
+    padding: 10px;
+  }
+  .news-articles-page h1 {
+    font-size: 24px;
+  }
+  .card-container {
+    gap: 10px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .news-articles-page {
+    margin-top: 100px;
+    padding: 5px;
+  }
+  .news-articles-page h1 {
+    font-size: 18px;
+  }
+  .card-container {
+    gap: 5px;
+    padding: 5px;
+  }
+}
