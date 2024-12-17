@@ -72,7 +72,7 @@ const LandingPage = () => {
                     </div>
                     <div className="chip-container">
                         <label>Region :</label>
-                        <div>
+                        <div className="chip-select">
                             {Array.from(new Set(countries.map(country => country.region))).map(region => (
                                 <div 
                                     key={region} 

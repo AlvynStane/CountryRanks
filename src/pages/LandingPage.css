@@ -56,9 +56,9 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-self: start;
+  justify-content: center;
   gap: 10px;
+  align-items: flex-start;
 }
 
 .sort-container select {
@@ -68,16 +68,24 @@
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
   transition: background-color 0.3s;
+  width: 100%;
 }
 
 .sort-container select option {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .chip-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 10px;
+  padding: 10px;
+}
+
+.chip-select {
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .chip {
